@@ -1,0 +1,86 @@
+{% extends 'public/base.html' %}
+
+{% block main %}
+   <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">仍以ip端口查询</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <form class="form-horizontal" action="{% url 'search'  %}" method="post">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="ip" class="col-sm-3 text-right control-label col-form-label">ip</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="ip" id="ip">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="search_port" class="col-sm-3 text-right control-label col-form-label">port</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="search_port" id="search_port" value="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" style="float: right; margin: 10px"  class="btn btn-primary"> 查 询 </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">This is a simple demo BY Lyc From ZAFU</footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+{% endblock %}
